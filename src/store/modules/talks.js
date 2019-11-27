@@ -16,13 +16,9 @@ const mutations = {
       ...state.talk,
       ...talk
     };
-    window.console.log(talk);
     const index = state.talks.findIndex(element => element.id === talk.id);
-    window.console.log(index);
     if (index > -1) {
-      window.console.log('a', state.talks);
       state.talks = [...state.talks.filter(element => element.id !== talk.id), talk]
-      window.console.log('b', state.talks);
     }
   },
   [types.LOADING](state, newState) {

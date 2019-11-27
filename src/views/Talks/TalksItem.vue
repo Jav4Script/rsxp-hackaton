@@ -58,7 +58,6 @@ export default {
   },
   computed: {
     subscribed() {
-      window.console.log(this.talk.spots.attendants);
       return this.talk.spots.attendants.find(
         element => element.name === this.name
       );

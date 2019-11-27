@@ -4,6 +4,21 @@
 
     <section class="section">
       <div class="container">
+        <div class="container">
+          <h2 class="title is-4">
+            {{ currentTest.id }} - {{ currentTest.question }}
+          </h2>
+          <b-field class="field">
+            <b-radio
+              v-model="radio"
+              :native-value="option.id"
+              name="optionTest"
+              v-for="option in currentTest.options"
+              :key="option.id"
+              >{{ option.description }}</b-radio
+            >
+          </b-field>
+        </div>
         <hr />
         <b-pagination
           :total="total"
@@ -23,19 +38,6 @@
           aria-current-label="Current page"
         ></b-pagination>
         <br />
-      </div>
-      <div class="container">
-        <div>{{ currentTest.question }}</div>
-        <b-field class="field">
-          <b-radio
-            v-model="radio"
-            :native-value="option.id"
-            name="optionTest"
-            v-for="option in currentTest.options"
-            :key="option.id"
-            >{{ option.description }}</b-radio
-          >
-        </b-field>
         <div v-if="currentTest.id === 4 && radio > 12">
           <router-link
             class="button is-block is-primary"
