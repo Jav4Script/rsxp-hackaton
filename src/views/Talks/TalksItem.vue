@@ -42,7 +42,7 @@ export default {
   },
   data() {
     return {
-      name: "Helen Smith"
+      name: "Ed Crain"
     };
   },
   filters: {

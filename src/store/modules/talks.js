@@ -16,6 +16,12 @@ const mutations = {
       ...state.talk,
       ...talk
     };
+    window.console.log(talk);
+    const index = state.talks.findIndex(element => element.id === talk.id);
+    window.console.log(index);
+    if (index > -1) {
+      state.talks[index] = talk;
+    }
   },
   [types.LOADING](state, newState) {
     state.loading = newState;
@@ -75,7 +81,7 @@ const getters = {
   subscribed(state) {
     return (talk) => {
       const talkSearch = state.talks.find(element => element.id === talk);
-      return !!talkSearch.spots.attendants.find(attendant => attendant.name === 'Helen Smith');
+      return !!talkSearch.spots.attendants.find(attendant => attendant.name === 'Ed Crain');
     }
   }
 }
