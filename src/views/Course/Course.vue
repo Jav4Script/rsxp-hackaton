@@ -7,7 +7,10 @@
         <div class="columns">
           <div class="column is-three-quarters">
             <div class="content">{{ talk.description }}</div>
-            <CourseAttendants class="talk-attendants" :attendants="talk.spots.attendants" />
+            <CourseAttendants
+              class="talk-attendants"
+              :attendants="talk.spots.attendants"
+            />
           </div>
           <CourseSidebar />
         </div>
@@ -24,7 +27,7 @@ import CourseAttendants from "./CourseAttendants";
 import talks from "@/store/courses";
 
 export default {
-  name: "Palestra",
+  name: "Curso",
   components: {
     TheTitle,
     CourseSidebar,

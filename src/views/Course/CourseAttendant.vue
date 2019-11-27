@@ -2,7 +2,7 @@
   <div class="media talk-attendent">
     <div class="media-left">
       <figure class="image is-48x48">
-        <img class="is-rounded" :src="attendant.image" alt="attendant.name" />
+        <img class="is-rounded" :src="attendant.image" :alt="attendant.name" />
       </figure>
     </div>
     <div class="media-content">
@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  name: "TalkAttendant",
+  name: "CourseAttendant",
   props: {
     attendant: Object
   }

@@ -1,8 +1,12 @@
 <template>
   <div class="container">
     <div class="columns is-multiline">
-      <div class="column is-one-quarter" v-for="talk in talks" :key="talk.id">
-        <CourseItem :talk="talk" />
+      <div
+        class="column is-one-quarter"
+        v-for="course in courses"
+        :key="course.id"
+      >
+        <CourseItem :course="course" />
       </div>
     </div>
   </div>
@@ -11,7 +15,7 @@
 <script>
 import CourseItem from "./CourseItem";
 
-import talks from "@/store/courses";
+import courses from "@/store/courses";
 
 export default {
   name: "CourseList",
@@ -20,7 +24,7 @@ export default {
   },
   data() {
     return {
-      talks
+      courses
     };
   }
 };

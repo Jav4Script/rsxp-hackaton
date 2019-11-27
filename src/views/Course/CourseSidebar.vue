@@ -30,16 +30,18 @@
     </div>
     <div class="column">
       <button
-        class="button talk-subscribe is-primary"
+        class="button course-subscribe is-primary"
         @click.prevent.stop="subscribe()"
-      >{{subscribed ? 'Inscrito!' : 'Inscrever-me'}}</button>
+      >
+        {{ subscribed ? "Inscrito!" : "Inscrever-me" }}
+      </button>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "TalkSidebar",
+  name: "CourseSidebar",
   components: {},
   filters: {
     formatDate(date) {
@@ -66,11 +68,7 @@ export default {
 </script>
 
 <style scoped>
-.talk-subscribe {
+.course-subscribe {
   width: 100%;
-}
-
-.talk-date {
-  margin-bottom: 10px;
 }
 </style>

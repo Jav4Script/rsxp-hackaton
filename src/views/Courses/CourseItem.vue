@@ -3,29 +3,25 @@
     <div class="card-content">
       <div class="media">
         <div class="media-content">
-          <span class="talk-date">
-            <strong class="subtitle is-6 has-text-primary">
-              {{
-              talk.date | formatDate
-              }}
-            </strong>
-          </span>
-          <br />
           <span class="title is-4">
-            <router-link :to="{ name: 'course', params: { id: talk.id } }">{{ talk.name }}</router-link>
+            <router-link :to="{ name: 'course', params: { id: course.id } }">{{
+              course.name
+            }}</router-link>
           </span>
           <br />
-          <small>{{ talk.author.name }}</small>
+          <small>{{ course.author.name }}</small>
           <br />
         </div>
       </div>
 
-      <div class="content">{{ talk.description }}</div>
+      <div class="content">{{ course.description }}</div>
 
       <button
-        class="button talks-item-subscribe is-primary"
+        class="button courses-item-subscribe is-primary"
         @click.prevent.stop="subscribe()"
-      >{{subscribed ? 'Inscrito!' : 'Inscrever-me'}}</button>
+      >
+        {{ subscribed ? "Inscrito!" : "Inscrever-me" }}
+      </button>
     </div>
   </div>
 </template>
@@ -34,7 +30,7 @@
 export default {
   name: "CourseItem",
   props: {
-    talk: Object
+    course: Object
   },
   data() {
     const subscribed = false;
@@ -61,11 +57,7 @@ export default {
 </script>
 
 <style scoped>
-.talk-date {
-  margin-bottom: 10px;
-}
-
-.talks-item-subscribe {
+.courses-item-subscribe {
   width: 100%;
 }
 </style>
