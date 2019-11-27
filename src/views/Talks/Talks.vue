@@ -4,7 +4,7 @@
 
     <section class="section">
       <div class="container">
-        <TalksFilters />
+        <TalksFilters @filter="filterTalks" />
         <TalksList />
       </div>
     </section>
@@ -12,16 +12,27 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
+
 import TheTitle from "@/components/TheTitle";
 import TalksFilters from "./TalksFilters";
 import TalksList from "./TalksList";
 
 export default {
-  name: "Palestras",
+  name: "Talks",
   components: {
     TheTitle,
     TalksFilters,
     TalksList
+  },
+  methods: {
+    ...mapActions("talks", ["loadTalks"]),
+    filterTalks(filters) {
+      this.loadTalks(filters);
+    }
+  },
+  async created() {
+    await this.loadTalks();
   }
 };
 </script>
