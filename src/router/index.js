@@ -44,7 +44,17 @@ const routes = [
     path: '/results',
     name: 'results',
     component: () => import('../views/Tests/Result.vue')
-  }
+  },
+  {
+    path: '/courses',
+    name: 'courses',
+    component: () => import('../views/Courses/Courses.vue')
+  },
+  {
+    path: '/courses/:id',
+    name: 'course',
+    component: () => import(/* webpackChunkName: "talk" */ '../views/Course/Course.vue'),
+  },
 ]
 
 const router = new VueRouter({
