@@ -22,9 +22,10 @@
           aria-page-label="Page"
           aria-current-label="Current page"
         ></b-pagination>
+        <br />
       </div>
       <div class="container">
-        <div>{{currentTest.question}}</div>
+        <div>{{ currentTest.question }}</div>
         <b-field class="field">
           <b-radio
             v-model="radio"
@@ -32,10 +33,15 @@
             name="optionTest"
             v-for="option in currentTest.options"
             :key="option.id"
-          >{{option.description}}</b-radio>
+            >{{ option.description }}</b-radio
+          >
         </b-field>
         <div v-if="currentTest.id === 4 && radio > 12">
-          <router-link class="button is-block is-primary" :to="{name: 'results'}">Finalizar</router-link>
+          <router-link
+            class="button is-block is-primary"
+            :to="{ name: 'results' }"
+            >Finalizar</router-link
+          >
         </div>
       </div>
     </section>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <TheTitle name="Profissões" />
+    <TheTitle name="Áreas do Mercado" />
     <OccupationsList />
   </div>
 </template>

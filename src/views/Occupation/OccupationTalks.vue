@@ -1,6 +1,6 @@
 <template>
   <div class="occupation-talks">
-    <h2 class="title">Conheça mais sobre a profissão</h2>
+    <h2 class="title">Saiba mais sobre cada área</h2>
   </div>
 </template>
 

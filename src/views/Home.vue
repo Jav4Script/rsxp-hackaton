@@ -80,7 +80,13 @@
                 Descubra sua Profissão na Tecnologia da Informação
               </h1>
 
-              <b-button class="botoes-hero" type="is-primary" inverted outlined>
+              <b-button
+                @click.prevent.stop="goTests()"
+                class="botoes-hero"
+                type="is-primary"
+                inverted
+                outlined
+              >
                 Fazer o Teste
               </b-button>
             </div>
@@ -193,6 +199,9 @@ export default {
     },
     goTalks() {
       this.$router.push({ name: "talks" });
+    },
+    goTests() {
+      this.$router.push({ name: "tests" });
     }
   }
 };
