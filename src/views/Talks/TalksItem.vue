@@ -5,14 +5,14 @@
         <div class="media-content">
           <span class="talk-date">
             <strong class="subtitle is-6 has-text-primary">
-              {{
-              talk.date | formatDate
-              }}
+              {{ talk.date | formatDate }}
             </strong>
           </span>
           <br />
           <span class="title is-4">
-            <router-link :to="{ name: 'talk', params: { id: talk.id } }">{{ talk.name }}</router-link>
+            <router-link :to="{ name: 'talk', params: { id: talk.id } }">{{
+              talk.name
+            }}</router-link>
           </span>
           <br />
           <small>{{ talk.author.name }}</small>
@@ -25,21 +25,25 @@
       <button
         class="button talks-item-subscribe is-primary"
         @click.prevent.stop="subscribe()"
-      >{{subscribed ? 'Inscrito!' : 'Inscrever-me'}}</button>
+      >
+        {{ subscribed(talk.id) ? "Inscrito!" : "Inscrever-me" }}
+      </button>
     </div>
   </div>
 </template>
 
 <script>
+import { mapActions, mapGetters } from "vuex";
+
 export default {
   name: "TalksItem",
   props: {
     talk: Object
   },
   data() {
-    const subscribed = false;
-
-    return { subscribed };
+    return {
+      name: "Helen Smith"
+    };
   },
   filters: {
     formatDate(date) {
@@ -52,9 +56,20 @@ export default {
       return date && dateTimeFormat.format(new Date(date));
     }
   },
+  computed: {
+    ...mapGetters("talks", ["subscribed"])
+  },
   methods: {
-    subscribe() {
-      return (this.subscribed = !this.subscribed);
+    ...mapActions("talks", ["subscribeTalk"]),
+    async subscribe() {
+      window.console.log(this.talk);
+      await this.subscribeTalk({
+        talkId: this.talk.id,
+        attendant: {
+          image: "https://bulma.io/images/placeholders/96x96.png",
+          name: this.name
+        }
+      });
     }
   }
 };

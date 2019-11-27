@@ -57,6 +57,26 @@ const actions = {
     } finally {
       commit(types.LOADING, false);
     }
+  },
+  async subscribeTalk({ commit }, { talkId, attendant }) {
+    try {
+      commit(types.LOADING, true);
+      const { data: talk } = await api.post(`/talks/${talkId}/subscribe`, attendant);
+      commit(types.TALK, talk);
+    } catch (error) {
+      commit(types.ERROR, error);
+    } finally {
+      commit(types.LOADING, false);
+    }
+  }
+}
+
+const getters = {
+  subscribed(state) {
+    return (talk) => {
+      const talkSearch = state.talks.find(element => element.id === talk);
+      return !!talkSearch.spots.attendants.find(attendant => attendant.name === 'Helen Smith');
+    }
   }
 }
 
@@ -95,5 +115,6 @@ export default {
   namespaced: true,
   mutations,
   actions,
+  getters,
   state,
 }
