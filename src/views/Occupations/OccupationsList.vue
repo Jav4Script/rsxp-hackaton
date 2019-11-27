@@ -19,7 +19,13 @@
                 Conheça o Teste Vocacional voltado para a Tecnologia
               </h1>
 
-              <b-button class="botoes-hero" type="is-primary" inverted outlined>
+              <b-button
+                @click.prevent.stop="goTests()"
+                class="botoes-hero"
+                type="is-primary"
+                inverted
+                outlined
+              >
                 Fazer o Teste
               </b-button>
             </div>
@@ -42,6 +48,11 @@ export default {
   },
   computed: {
     ...mapState("occupations", ["occupations"])
+  },
+  methods: {
+    goTests() {
+      this.$router.push({ name: "tests" });
+    }
   }
 };
 </script>
