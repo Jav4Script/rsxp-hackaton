@@ -4,7 +4,7 @@
       <div class="hero-body">
         <div class="container has-text-centered">
           <h1 class="title is-1 hero-title">
-            O caminho para começar sua carreira em tecnologia
+            Comece sua carreira em tecnologia como um Aprendiz
           </h1>
 
           <h2 class="subtitle is-3 hero-subtitle">
@@ -29,25 +29,46 @@
         <div class="column is-one-quarter">
           <div class="column has-text-centered">
             <b-icon icon="information-outline" size="is-large"></b-icon>
-            <p class="is-title is-1">
-              Conheça as Áreas
-            </p>
+            <h1 class="title is-3 is-spaced">
+              Descubra o Mercado
+            </h1>
+
+            <h2 class="subtitle is-5">
+              Dividimos o mercado em quatro áreas gerais para facilitar seu
+              entendimento. Saiba mais sobre cada uma
+            </h2>
           </div>
         </div>
 
-        <div class="column has-text-centered">
+        <div class="column has-text-centered info-div">
           <b-icon icon="magnify" size="is-large"></b-icon>
-          <p class="is-subtitle is-6">Explore</p>
+          <h1 class="title is-3 is-spaced">Explore cada uma das Áreas</h1>
+
+          <h2 class="subtitle is-5">
+            Entenda qual área combina com você e quais atividades podem ser
+            exercidas dentro dela. Identifique e se imagine atuando
+          </h2>
         </div>
 
         <div class="column has-text-centered">
           <b-icon icon="target" size="is-large"></b-icon>
-          <p class="is-subtitle is-6">Escolha o Caminho</p>
+          <h1 class="title is-3 is-spaced">Escolha o Caminho</h1>
+
+          <h2 class="subtitle is-5">
+            Agora você tem uma ideia sobre a área que mais te agrada. Aprofunde
+            seu conhecimento sobre cada uma das profissões
+          </h2>
         </div>
 
         <div class="column has-text-centered">
           <b-icon icon="guitar-pick" size="is-large"></b-icon>
-          <p class="is-subtitle is-6">Aprenda o Necessário</p>
+          <h1 class="title is-3 is-spaced">Aprenda o Necessário</h1>
+
+          <h2 class="subtitle is-5">
+            Vamos oferecer todo o conteúdo técnico necessário para você
+            conseguir uma colocação como jovem aprendiz e começar sua jornada no
+            mercado de trabalho
+          </h2>
         </div>
       </div>
 
@@ -74,16 +95,17 @@
           </h1>
 
           <p class="missao-paragraph">
-            A X tem o intuito de conectar empresas e jovens adolescentes através
-            do direcionamento de carreiras. Conhecer os sonhos, anseios e
-            expectativas em relação ao futuro, criando uma conexão direta entre
-            os profissionais e jovens aprendizes. Em nossa plataforma, os
-            membros tem a oportunidade de aprender, ensinar, ter uma comunicação
-            direta e ampliar o conhecimento, auxiliando diretamente na tomada de
-            decisões. Dessa forma, acreditamos que a aproximação, transmissão de
-            ideias, testes vocacionais focados no âmbito humano e tutorias de
-            profissionais que atuam na área de tecnologia são o caminho para
-            desenvolver o mercado de trabalho dos próximos anos.
+            A Conecta Aprendiz tem o intuito de conectar empresas e jovens
+            adolescentes através do direcionamento de carreiras. Conhecer os
+            sonhos, anseios e expectativas em relação ao futuro, criando uma
+            conexão direta entre os profissionais e jovens aprendizes. Em nossa
+            plataforma, os membros tem a oportunidade de aprender, ensinar, ter
+            uma comunicação direta e ampliar o conhecimento, auxiliando
+            diretamente na tomada de decisões. Dessa forma, acreditamos que a
+            aproximação, transmissão de ideias, testes vocacionais focados no
+            âmbito humano e tutorias de profissionais que atuam na área de
+            tecnologia são o caminho para desenvolver o mercado de trabalho dos
+            próximos anos.
           </p>
         </div>
 
@@ -179,7 +201,7 @@ export default {
 <style lang="scss" scoped>
 .section-hero {
   background-color: #f27500;
-  background-image: url(../assets/photo-hero-1.png);
+  background-image: url(../assets/photo-hero-2.jpg);
   background-size: 100%;
   background-repeat: no-repeat;
 
@@ -204,13 +226,17 @@ export default {
   color: #ffffff;
 }
 
+.info-div {
+  align-items: center;
+}
+
 .missao-div {
   align-items: center;
 }
 
 .missao-paragraph {
-  font-size: 16px !important;
-  line-height: 2rem;
+  font-size: 18px !important;
+  line-height: 1.5rem;
   word-wrap: break-word;
   text-align: justify;
 }

@@ -1,12 +1,18 @@
 <template>
   <b-navbar wrapper-class="container">
     <template slot="brand">
-      <b-navbar-item tag="router-link" :to="{ path: '/' }">Mentoria</b-navbar-item>
+      <b-navbar-item tag="router-link" :to="{ path: '/' }"
+        >Conecta Aprendiz</b-navbar-item
+      >
     </template>
 
     <template slot="start">
-      <router-link class="navbar-item" :to="{ name: 'occupations' }">Profissões</router-link>
-      <router-link class="navbar-item" :to="{ name: 'talks' }">Palestras</router-link>
+      <router-link class="navbar-item" :to="{ name: 'occupations' }"
+        >Profissões</router-link
+      >
+      <router-link class="navbar-item" :to="{ name: 'talks' }"
+        >Palestras</router-link
+      >
     </template>
 
     <template slot="end">
