@@ -3,7 +3,7 @@
     <div class="container">
       <div class="content has-text-centered">
         <p>
-          <a href="http://www.localhost:8080.com.br">Nome da Empresa</a> -
+          <a href="http://www.localhost:8080.com.br">Conecta Aprendiz</a> -
           Copyright (C) 2019.
         </p>
       </div>

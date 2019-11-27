@@ -8,10 +8,10 @@
 
     <template slot="start">
       <router-link class="navbar-item" :to="{ name: 'occupations' }"
-        >Profissões</router-link
+        >Áreas do Mercado</router-link
       >
       <router-link class="navbar-item" :to="{ name: 'talks' }"
-        >Palestras</router-link
+        >Vídeos</router-link
       >
     </template>
 
