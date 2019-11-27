@@ -7,8 +7,9 @@
     <template slot="start">
       <router-link class="navbar-item" :to="{ name: 'occupations' }">Profissões</router-link>
       <router-link class="navbar-item" :to="{ name: 'talks' }">Palestras</router-link>
+      <router-link class="navbar-item" :to="{ name: 'courses' }">Cursos</router-link>
     </template>
-
+''
     <template slot="end">
       <b-navbar-item tag="div">
         <div class="buttons"></div>
