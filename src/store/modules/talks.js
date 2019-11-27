@@ -20,7 +20,9 @@ const mutations = {
     const index = state.talks.findIndex(element => element.id === talk.id);
     window.console.log(index);
     if (index > -1) {
-      state.talks[index] = talk;
+      window.console.log('a', state.talks);
+      state.talks = [...state.talks.filter(element => element.id !== talk.id), talk]
+      window.console.log('b', state.talks);
     }
   },
   [types.LOADING](state, newState) {
@@ -78,11 +80,8 @@ const actions = {
 }
 
 const getters = {
-  subscribed(state) {
-    return (talk) => {
-      const talkSearch = state.talks.find(element => element.id === talk);
-      return !!talkSearch.spots.attendants.find(attendant => attendant.name === 'Ed Crain');
-    }
+  getTalks(state) {
+    return [...state.talks].sort((a, b) => a.slug && a.slug.localeCompare(b.slug));
   }
 }
 

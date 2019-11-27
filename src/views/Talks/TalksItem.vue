@@ -26,7 +26,7 @@
         class="button talks-item-subscribe is-primary"
         @click.prevent.stop="subscribe()"
       >
-        {{ subscribed(talk.id) ? "Inscrito!" : "Inscrever-me" }}
+        {{ subscribed ? "Inscrito!" : "Inscrever-me" }}
       </button>
     </div>
   </div>
@@ -42,7 +42,7 @@ export default {
   },
   data() {
     return {
-      name: "Ed Crain"
+      name: "Hayaa Crain"
     };
   },
   filters: {
@@ -57,12 +57,16 @@ export default {
     }
   },
   computed: {
-    ...mapGetters("talks", ["subscribed"])
+    subscribed() {
+      window.console.log(this.talk.spots.attendants);
+      return this.talk.spots.attendants.find(
+        element => element.name === this.name
+      );
+    }
   },
   methods: {
     ...mapActions("talks", ["subscribeTalk"]),
     async subscribe() {
-      window.console.log(this.talk);
       await this.subscribeTalk({
         talkId: this.talk.id,
         attendant: {

@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapGetters } from "vuex";
 
 import TalksItem from "./TalksItem";
 
@@ -19,7 +19,7 @@ export default {
     TalksItem
   },
   computed: {
-    ...mapState("talks", ["talks"])
+    ...mapGetters("talks", { talks: "getTalks" })
   }
 };
 </script>
