@@ -2,26 +2,24 @@
   <div class="container">
     <div class="columns is-multiline">
       <div class="column is-one-quarter" v-for="talk in talks" :key="talk.id">
-        <TalksItem :talk="talk" />
+        <TalksItem :talk.sync="talk" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import TalksItem from "./TalksItem";
+import { mapGetters } from "vuex";
 
-import talks from "@/store/talks";
+import TalksItem from "./TalksItem";
 
 export default {
   name: "TalksList",
   components: {
     TalksItem
   },
-  data() {
-    return {
-      talks
-    };
+  computed: {
+    ...mapGetters("talks", { talks: "getTalks" })
   }
 };
 </script>
